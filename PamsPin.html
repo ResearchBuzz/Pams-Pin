@@ -1,0 +1,48 @@
+<html>
+<head></head>
+<body>
+
+<h2>
+    Easy Location-Based Twitter Search: Pam's Pin
+  </h2>
+  <h3>
+    Pam's Pin takes the address you specify and translates it into a location-based Twitter search URL which 
+    opens in a new tab. You can search for tweets in a radius of up to 100 km. Leave the checkbox ticked if you want
+    to restrict your results to tweets from verified Twitter accounts only.
+  </h3>
+  
+   <label>Street Address:</label>
+  <input type="text" class="street" value="11222 Dilling St"><br><br>
+
+  <label>City</label>
+  <input type="text" class="city" value="Studio City"><br><br>
+
+  <label>State</label>
+  <input type="text" class="state" size="2" maxlength="2" value="CA"><br><br>
+
+  <label>Radius to Search</label>
+  <input type="number" class="searchkm" max="100" value="1" size="4"><br><br>
+
+  <label>Enter y (or any letter, really) if you want to restrict your search to verified accounts only.</label>
+  <input type="text" class="verified" size="1" maxlength="1"><br><br>
+ 
+
+  
+<br><br>
+(If you're restricting your results to verified accounts only, you might need to widen your search radius from the default of 1.)
+  <br><br>
+
+
+<button onclick="getAddress()">Translate to Twitter Search in New Tab</button><br><br>
+
+
+
+<br><i>Pam's Pin was inspired by Pam Baker!</i>
+
+
+  <script src="PamsPin.js"></script>
+  
+  
+  
+</body>
+</html>
