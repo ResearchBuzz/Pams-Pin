@@ -1,16 +1,105 @@
+ <!DOCTYPE html>
+<!-- Template by html.am -->
 <html>
-<head></head>
-<body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>ResearchBuzz Search Gizmos: Pam's Pin</title>
+		<style type="text/css">
+			html, #page { padding:0; margin:0;}
+			body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
+			h1, h2, h3, h4, h5, h6 {color:darkblue;}
+			#page { background:#fff;}
+			#header, #footer, #top-nav, #content, #content #contentbar, #content #sidebar { margin:0; padding:0;}
+						
+			/* Logo */
+			#logo { padding:0; width:auto; float:left;}
+			#logo h1 a, h1 a:hover { color:darkblue; text-decoration:none;}
+			#logo h1 span { color:#24592c;}
 
-<h2>
-    Easy Location-Based Twitter Search: Pam's Pin
-  </h2>
-  <h3>
-    Pam's Pin takes the address you specify and translates it into a location-based Twitter search URL which 
-    opens in a new tab. You can search for tweets in a radius of up to 100 km. Leave the checkbox ticked if you want
-    to restrict your results to tweets from verified Twitter accounts only.
-  </h3>
-  
+			/* Header */
+			#header { background:#fff; }
+			#header-inner { margin:0 auto; padding:0; width:970px;}
+			
+			/* Feature */
+			.feature { background:blue;padding:18px;}
+			.feature-inner { margin:auto;width:970px; }
+			.feature-inner h1 {color:#E9E9FC;font-size:32px;}
+			
+			/* Menu */
+			#top-nav { margin:0 auto; padding:0px 0 0; height:37px; float:right;}
+			#top-nav ul { list-style:none; padding:0; height:37px; float:left;}
+			#top-nav ul li { margin:0; padding:0 0 0 8px; float:left;}
+			#top-nav ul li a { display:block; margin:0; padding:8px 20px; color:blue; text-decoration:none;}
+			#top-nav ul li.active a, #top-nav ul li a:hover { color:#d3d3f9;}
+			
+			/* Content */
+			#content-inner { margin:0 auto; padding:10px 0; width:970px;background:#fff;}
+			#content #contentbar { margin:0; padding:0; float:right; width:760px;}
+			#content #contentbar .article {  font-size: 1.25em; color: black; margin:0 0 24px; padding:0 20px 0 15px; }
+			#content #sidebar { background-color:#ECFFDC; padding:0; float:left; width:200px;}
+			#content #sidebar .widget { margin:0 0 12px; padding:8px 8px 8px 13px;line-height:1.4em;}
+			#content #sidebar .widget h3 a { text-decoration:none;}
+			#content #sidebar .widget ul { margin:0; padding:0; list-style:none; color:#959595;}
+			#content #sidebar .widget ul li { margin:0;}
+			#content #sidebar .widget ul li { padding:4px 0; width:185px;}
+			#content #sidebar .widget ul li a {font-size: 1.25em; color:black; text-decoration:none; margin-left:-16px; padding:4px 8px 4px 16px;}
+			#content #sidebar .widget ul li a:hover { color:#d3d3f9; font-weight:bold; text-decoration:none;}
+			
+			/* Footerblurb */
+			#footerblurb { background:#d3d3f9;color:blue;}
+			#footerblurb-inner { margin:0 auto; width:922px; padding:24px;}
+			#footerblurb .column { margin:0; text-align:justify; float:left;width:250px;padding:0 24px;}
+			
+			/* Footer */
+			#footer { background:#fff;}
+			#footer-inner { margin:auto; text-align:center; padding:12px; width:922px;}
+			#footer a {color:blue;text-decoration:none;}
+			
+			/* Clear both sides to assist with div alignment  */
+			.clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+		</style>
+		
+
+	</head>
+	<body>
+		<div id="page">
+			<header id="header">
+				<div id="header-inner">	
+					<div id="logo">
+						<h1><a href="#">ResearchBuzz<span>Search Gizmos</span></a></h1>
+					</div>
+					<div id="top-nav">
+						<ul>
+						<li><a href="https://github.com/ResearchBuzz">ResearchBuzz GitHub Home</a></li>
+						<li><a href="https://www.researchbuzz.me">ResearchBuzz Main Site</a></li>
+						<li><a href="https://www.rbfirehose.com">ResearchBuzz Firehose</a></li>
+						</ul>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</header>
+			<div class="feature">
+				<div class="feature-inner">
+				<h1>Pam's Pin: Easy Location-Based Twitter Search </h1>
+				</div>
+			</div>
+		
+	
+			<div id="content">
+				<div id="content-inner">
+				
+					<main id="contentbar">
+						<div class="article">
+							
+<h2></h2>
+
+<h3> Pam's Pin takes the address you specify and translates it into a location-based Twitter search URL which 
+    opens in a new tab. You can search for tweets in a radius of up to 100 km. Tick the checkbox if you want  to restrict your results to tweets from verified Twitter accounts only.
+</h3>
+
+<h4>You will need a Positionstack API key to use this tool. You can get one for free at <a href="https://positionstack.com/product">https://positionstack.com/product</a>. Please note that occasionally the api is a little slow.</h4>
+
+
    <label>Street Address:</label>
   <input type="text" class="street" value="11222 Dilling St"><br><br>
 
@@ -23,13 +112,18 @@
   <label>Radius to Search</label>
   <input type="number" class="searchkm" max="100" value="1" size="4"><br><br>
 
-  <label>Enter y (or any letter, really) if you want to restrict your search to verified accounts only.</label>
+  <label>Enter y if you want to restrict your search to verified accounts only.</label>
   <input type="text" class="verified" size="1" maxlength="1"><br><br>
+
+(If you're restricting your results to verified accounts only, you might need to widen your search radius from the default of 1.)
+  <br><br>
+
+
+  <label>Please enter your Positionstack API key: </label>
+  <input type="text" class="psapikey" value="Your API Key Goes Here"><br>
+<i>You will need a Positionstack API key to use this tool. You can get one for free at <a href="https://positionstack.com/product">https://positionstack.com/product</a>.</i> 
  
 
-  
-<br><br>
-(If you're restricting your results to verified accounts only, you might need to widen your search radius from the default of 1.)
   <br><br>
 
 
@@ -40,9 +134,139 @@
 <br><i>Pam's Pin was inspired by Pam Baker!</i>
 
 
-  <script src="PamsPin.js"></script>
+
+
+
+					</main>
+					
+					<nav id="sidebar">
+						<div class="widget">
+							<h3>ResearchBuzz Search Gizmos</h3>
+							<ul>
+							<li><a href="https://researchbuzz.github.io/politician-parade-Twitter/">Politician Parade: Twitter</a></li>
+							<li><a href="https://researchbuzz.github.io/politician-parade/">Politician Parade: Google News</a></li>
+							<li><a href="https://researchbuzz.github.io/Time-Sliced-News-Search/">Time-Sliced News Search</a></li>
+							<li><a href="https://researchbuzz.github.io/Kebberfegg/">Kebberfegg RSS Feed Generator</a></li>
+							<li><a href="https://researchbuzz.github.io/blogspace-time-machine/">Blogspace Time Machine</a></li>
+<li><a href="https://researchbuzz.github.io/Blog-Shovel/">Blog Shovel</a></li>
+<li><a href="https://researchbuzz.github.io/sinker-search/">Sinker Search</a></li>
+<li><a href="https://researchbuzz.github.io/The-Anti-Bullseye-Name-Search/">The Anti-Bullseye Name Search</a></li>
+<li><a href="https://researchbuzz.github.io/Back-That-Ask-Up-/">Back That Ask Up</a></li>
+<li><a href="https://researchbuzz.github.io/Twitter-Receipts/">Twitter Receipts</a></li>
+							</ul>
+						</div>
+					</nav>
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+		
+			<div id="footerblurb">
+				<div id="footerblurb-inner">
+				
+					<div class="column">
+						<h2><span>What Is This?</span></h2>
+						<p>The RB Gizmos are a collection of search tools made with JavaScript and HTML.</p>
+					</div>	
+					<div class="column">
+						<h2><span>Why Is This?</span></h2>
+						<p>Because I've been writing about searching and search engines since 1996 and I'm obsessed with them.</p>
+					</div>
+					<div class="column">
+						<h2> </h2>
+						<p><script> </script></p>
+					</div>	
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+			<footer id="footer">
+				<div id="footer-inner">
+					
+					<div class="clr"></div>
+				</div>
+			</footer>
+
+
+
+		</div>
+
+
+
+
+   <script>
+function getAddress(){
+
+ // Getting values from form 
+
+    var street = document.querySelector(".street").value  
+    var city = document.querySelector(".city").value
+    var psapikey = document.querySelector(".psapikey").value
+    var state = document.querySelector(".state").value
+    var searchrad = document.querySelector(".searchkm").value
+    var verify = document.querySelector(".verified").value 
+   
+
+    // Base of the PositionStack query URL
+    const apibase = "http://api.positionstack.com/v1/forward?access_key="
+    // Plug in API key. See ReadMe for more info on where to get the key. 
+    const apikeynumber = psapikey
+    // Add suffix to query
+    const querysuffix = "&query="
+    // Putting the whole API request together
+    const apikey = apikeynumber+querysuffix
+    
+    var mapquery = street+","+city+" "+state
+    var api_url = encodeURI(apibase+apikey+mapquery)
+console.log(api_url)
+
+
+    // Empty arrays for processing API data
+    let mapdata = {}
+    let MyArray = {}
+     
+    // Grabbing the PositionStack data and getting lat/long
+
+    fetch(api_url)
+    .then(function(response){
+         return response.json()
+    })
+    .then (function(res){
+        mapdata=res
+    console.log(mapdata)
+    console.log(mapdata.data[0])
+    MyArray = mapdata.data[0]
+     var lat = MyArray.latitude
+    var long = MyArray.longitude
+    
+    // Applying lat/long data to Twitter query and making a query URL
+
+    var twitbase = "https://twitter.com/search?q=geocode:"
+    var twitshort = encodeURI(twitbase+lat+","+long+","+searchrad+"km")
+
+    // Did the user specify verified? We have to add a verified filter to the query URL. 
+
+   if (verify){ 
+    var vermod = encodeURI(" filter:verified")
+     twitshort = twitshort+vermod }
+     else {twitshort = twitshort};
+   
+    // The final Twitter query 
+
+    var twitquery = twitshort+"&f=live"
+    
+    // Open Twitter query in new Window
+
+    window.open(twitquery)
+    
+    })
+    
+    }
+       </script>
+
   
-  
-  
+}
+   
 </body>
 </html>
+
