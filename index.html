@@ -119,9 +119,9 @@
   <br><br>
 
 
-  <label>Please enter your Positionstack API key: </label>
+  <label>Please enter your Geocodify API key: </label>
   <input type="text" class="psapikey" value="Your API Key Goes Here"><br>
-<i>You will need a Positionstack API key to use this tool. You can get one for free at <a href="https://positionstack.com/product">https://positionstack.com/product</a>.</i> 
+<i>You will need a Geocodify API key to use this tool. You can get one for free at <a href="https://geocodify.com/api-documentation">https://geocodify.com/api-documentation</A>. 
  
 
   <br><br>
@@ -132,7 +132,6 @@
 
 
 <br><i>Pam's Pin was inspired by Pam Baker!</i>
-
 
 
 
@@ -207,12 +206,13 @@ function getAddress(){
     var verify = document.querySelector(".verified").value 
    
 
-    // Base of the PositionStack query URL
-    const apibase = "https://api.positionstack.com/v1/forward?access_key="
+
+    // Base of the Geocodify query URL
+    const apibase = "https://api.geocodify.com/v2/geocode?api_key="
     // Plug in API key. See ReadMe for more info on where to get the key. 
     const apikeynumber = psapikey
     // Add suffix to query
-    const querysuffix = "&query="
+    const querysuffix = "&q="
     // Putting the whole API request together
     const apikey = apikeynumber+querysuffix
     
@@ -234,10 +234,10 @@ console.log(api_url)
     .then (function(res){
         mapdata=res
     console.log(mapdata)
-    console.log(mapdata.data[0])
-    MyArray = mapdata.data[0]
-     var lat = MyArray.latitude
-    var long = MyArray.longitude
+    console.log(mapdata.response.bbox[0])
+  //  MyArray = mapdata.bbox[0]
+     var lat = mapdata.response.bbox[1]
+     var long = mapdata.response.bbox[0]
     
     // Applying lat/long data to Twitter query and making a query URL
 
@@ -269,4 +269,3 @@ console.log(api_url)
    
 </body>
 </html>
-
