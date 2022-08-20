@@ -119,7 +119,7 @@
 
 
   <label>Please enter your Geocodify API key: </label>
-  <input type="text" class="psapikey" value="Your API Key Goes Here"><br>
+  <input type="text" class="psapikey"><br>
 <i>You will need a Geocodify API key to use this tool. You can get one for free at <a href="https://geocodify.com/api-documentation">https://geocodify.com/api-documentation</A></i>. 
  
 
@@ -199,12 +199,21 @@
 
    <script>
 function getAddress(){
+	
+	
+	var psapikey = document.querySelector(".psapikey").value
+	
+	 if (psapikey == null || apikey == "") {
+         alert("Please enter a Geocodify API key. This tool won't work without one.");
+         return false;
+      }
+
 
  // Getting values from form 
 
     var street = document.querySelector(".street").value  
     var city = document.querySelector(".city").value
-    var psapikey = document.querySelector(".psapikey").value
+    
     var state = document.querySelector(".state").value
     var searchrad = document.querySelector(".searchkm").value
     var verify = document.querySelector(".verified").value 
