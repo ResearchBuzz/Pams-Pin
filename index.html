@@ -200,24 +200,26 @@
    <script>
 function getAddress(){
 	
-	
 	var psapikey = document.querySelector(".psapikey").value
-	
-	 if (psapikey == null || apikey == "") {
+
+	 if (psapikey == null || psapikey == "") {
          alert("Please enter a Geocodify API key. This tool won't work without one.");
          return false;
       }
+	
 
 
  // Getting values from form 
 
     var street = document.querySelector(".street").value  
     var city = document.querySelector(".city").value
-    
+    	
     var state = document.querySelector(".state").value
     var searchrad = document.querySelector(".searchkm").value
     var verify = document.querySelector(".verified").value 
    
+    
+    
 
     // Base of the Geocodify query URL
     const apibase = "https://api.geocodify.com/v2/geocode?api_key="
