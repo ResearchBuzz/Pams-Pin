@@ -118,10 +118,6 @@
   <br><br>
 
 
-  <label>Please enter your Geocodify API key: </label>
-  <input type="text" class="psapikey"><br>
-<i>You will need a Geocodify API key to use this tool. You can get one for free at <a href="https://geocodify.com/api-documentation">https://geocodify.com/api-documentation</A></i>. 
- 
 
   <br><br>
 
@@ -197,12 +193,7 @@
    <script>
 function getAddress(){
 	
-	var psapikey = document.querySelector(".psapikey").value
-
-	 if (psapikey == null || psapikey == "") {
-         alert("Please enter a Geocodify API key. This tool won't work without one.");
-         return false;
-      }
+	
 	
 // 
 
@@ -216,19 +207,15 @@ function getAddress(){
     var verify = document.querySelector(".verified").value 
    
     
-    
+   var baseurl = "https://nominatim.openstreetmap.org/search.php?&addressdetails=1&format=jsonv2&street="
 
-    // Base of the Geocodify query URL
-    const apibase = "https://api.geocodify.com/v2/geocode?api_key="
-    // Plug in API key. 
-    const apikeynumber = psapikey
-    // Add suffix to query
-    const querysuffix = "&q="
-    // Putting the whole API request together
-    const apikey = apikeynumber+querysuffix
-    
-    var mapquery = street+","+city+" "+state
-    var api_url = encodeURI(apibase+apikey+mapquery)
+
+   var urlsuffix = street+"&state="+state
+   urlsuffix = encodeURI(urlsuffix)
+   console.log ("Suffix",urlsuffix) 
+   
+   var api_url = baseurl+urlsuffix 
+   console.log(api_url)
 
 
     // Empty arrays for processing API data
@@ -244,9 +231,8 @@ function getAddress(){
     .then (function(res){
         mapdata=res
     console.log(mapdata)
-  //  MyArray = mapdata.bbox[0]
-     var lat = mapdata.response.bbox[1]
-     var long = mapdata.response.bbox[0]
+     var lat = mapdata[0].lat
+     var long = mapdata[1].lon
     
     // Applying lat/long data to Twitter query and making a query URL
 
